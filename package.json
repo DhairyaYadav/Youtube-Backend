@@ -14,7 +14,9 @@
     "content-disposition": "^0.5.4",
     "content-type": "^1.0.5",
     "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
     "cookie-signature": "^1.0.6",
+    "cors": "^2.8.5",
     "debug": "^2.6.9",
     "define-data-property": "^1.1.2",
     "depd": "^2.0.0",
@@ -85,7 +87,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon --env-file=.env src/server.js"
+    "start": "nodemon --env-file=.env src/server.js"
   },
   "author": "Dhairya",
   "license": "ISC"
