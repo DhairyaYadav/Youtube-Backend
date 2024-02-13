@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
         trim: true,
         index: true
     },
-    avater:{
+    avatar:{
         type: String, //cloudinary url
         required: true,
     },
@@ -74,9 +74,6 @@ userSchema.methods.generateRefreshToken = function (){
     return JWT.sign(
         {
             _id: this._id,
-            email: this.email,
-            username: this.username,
-            fullname: this.fullname
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
