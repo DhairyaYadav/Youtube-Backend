@@ -18,4 +18,9 @@ app.use(express.static("public")); //assets jaise img  ko accept p.s public fode
 //configure cookies
 app.use(cookieParser());
 
+//routes
+import userRouter from './Routes/user.routes.js'
+//routes declaration
+app.use("/api/v1/users",userRouter)
+
 export { app }

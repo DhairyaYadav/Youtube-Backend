@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import  JWT from "jsonwebtoken";
+import  JWT from "json-web-token";
 import bcrypt from "bcrypt";
 
 const userSchema = mongoose.Schema({
@@ -48,7 +48,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.pre("save", async function (next) { //arrow function nahi use kiya kyuki arrow function mein this ka refence nahi hota usey context nahi pata hota
     if (!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
 
